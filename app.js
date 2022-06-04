@@ -1,8 +1,8 @@
-import { make30creatures } from './make-30-creatures.js'
-import { BlockList } from './block-list.js'
-import { buildItem } from './build-item.js'
-import { buildTestPanel } from './build-test-panel.js'
-import {expose} from './expose.js'
+import { make30creatures } from './make-creatures/make-30-creatures.js'
+import { BlockList } from './block-list/block-list.js'
+import { buildItem } from './block-list/build-item.js'
+import { buildTestPanel } from './test-panel/build-test-panel.js'
+import { expose } from './expose.js'
 
 const creatures = make30creatures()
 
@@ -19,4 +19,4 @@ blockList.have(creatures)
 blockList.use(buildItem)
 blockList.render()
 
-expose({blockList})
+expose({ blockList })

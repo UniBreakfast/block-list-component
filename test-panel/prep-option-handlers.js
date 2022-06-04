@@ -1,6 +1,6 @@
 export {prepOptionHandlers}
 
-import { make30creatures } from './make-30-creatures.js'
+import { make30creatures } from '../make-creatures/make-30-creatures.js'
 
 function prepOptionHandlers(blockList) {
   const optionHandlers = {
