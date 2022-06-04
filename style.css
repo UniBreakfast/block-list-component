@@ -1,0 +1,39 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block-list {
+  width: 500px;
+  padding-left: calc((100% - 500px) / 2);
+  margin: 70px auto;
+}
+
+.block-list>.item {
+  height: 50px;
+  border-radius: 10px;
+  background-color: #ec8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 10px;
+}
+
+#testPanel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#testSelect, #doBtn {
+  font-size: 16px;
+  line-height: 2;
+  height: 40px;
+}
