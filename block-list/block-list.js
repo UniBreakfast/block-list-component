@@ -37,4 +37,10 @@ export class BlockList {
 
     if (~i) this.items.splice(i, 1)
   }
+
+  add(item) {
+    this.items.push(item)
+
+    if (this.el) this.el.append(this.buildFn(item))
+  }
 }

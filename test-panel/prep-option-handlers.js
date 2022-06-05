@@ -1,6 +1,7 @@
 export {prepOptionHandlers}
 
 import { make30creatures } from '../make-creatures/make-30-creatures.js'
+import { makeCreature } from '../make-creatures/make-a-creature.js'
 
 function prepOptionHandlers(blockList) {
   const optionHandlers = {
@@ -19,6 +20,12 @@ function prepOptionHandlers(blockList) {
 
       if (id !== undefined) blockList.remove(id)
     },
+
+    addItem() {
+      const creature = makeCreature()
+
+      blockList.add(creature)
+    }
   }
 
   return optionHandlers
