@@ -1,46 +1,16 @@
-export class BlockList {
-  items = []
+export { BlockList }
 
-  settleAt(parent) {
-    this.parent = parent
-  }
+import { BlockList } from "./block-list-class.js"
 
-  have(items) {
-    this.items = items
-  }
+import { prepDescriptors } from "../prep-descriptors.js"
 
-  use(buildFn) {
-    this.buildFn = buildFn
-  }
+import { build } from "./build.js"
+import { add } from "./add.js"
+import { remove } from "./remove.js"
+import { insertAt } from "./insert-at.js"
+import { clear } from "./clear.js"
+import { sort } from "./sort.js"
 
-  render() {
-    if (!this.el) this.parent.replaceChildren(this.build())
-
-    this.el.replaceChildren(...this.items.map(this.buildFn))
-  }
-
-  build() {
-    if (this.el) return
-
-    const ul = document.createElement('ul')
-
-    ul.classList.add('block-list')
-    this.el = ul
-
-    return ul
-  }
-
-  remove(id) {
-    this.el?.querySelector(`[data-id="${id}"]`)?.remove()
-
-    const i = this.items.findIndex(item => item.id === id)
-
-    if (~i) this.items.splice(i, 1)
-  }
-
-  add(item) {
-    this.items.push(item)
-
-    if (this.el) this.el.append(this.buildFn(item))
-  }
-}
+Object.defineProperties(BlockList.prototype, prepDescriptors(
+  { build, add, remove, insertAt, clear, sort }
+))
