@@ -9,8 +9,9 @@ export class BlockList {
     this.items = items
   }
 
-  use(buildFn) {
+  use(buildFn, verifyFn) {
     this.buildFn = buildFn
+    this.verifyFn = verifyFn
   }
 
   render() {

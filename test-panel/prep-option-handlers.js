@@ -43,6 +43,10 @@ function prepOptionHandlers(blockList) {
       blockList.clear()
     },
 
+    clearSlideSideways() {
+      blockList.clearSlideSideways()
+    },
+
     sortByFeature() {
       blockList.sort(({ item: item1 }, { item: item2 }) => {
         const feature1 = item1.description?.split(' ')[0]

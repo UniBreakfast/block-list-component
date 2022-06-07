@@ -9,8 +9,13 @@ import { add } from "./add.js"
 import { remove } from "./remove.js"
 import { insertAt } from "./insert-at.js"
 import { clear } from "./clear.js"
+import { clearSlideSideways } from "./clear-slide-sideways.js"
 import { sort } from "./sort.js"
+import { renderSlideFromSideways } from "./render-from-sideways.js"
 
 Object.defineProperties(BlockList.prototype, prepDescriptors(
-  { build, add, remove, insertAt, clear, sort }
+  {
+    build, add, remove, insertAt, clear, sort,
+    clearSlideSideways, renderSlideFromSideways,
+  }
 ))

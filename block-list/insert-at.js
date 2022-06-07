@@ -1,6 +1,6 @@
 export {insertAt}
 
-insertAt(i, ...items) {
+function insertAt(i, ...items) {
   this.items.splice(i, 0, ...items)
 
   if (this.el) for (const item of items) {
